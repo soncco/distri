@@ -18,6 +18,7 @@
       <th>Fecha de Documento</th>
       <th class="filter-select filter-exact" data-placeholder="Quién">Quién</th>
       <th class="filter-select filter-exact" data-placeholder="Almacén">Almacen</th>
+      <th class="filter-select filter-exact" data-placeholder="Total S/.">Total</th>
       <th class="sorter-false">Acciones</th>
     </tr>
   </thead>
@@ -29,6 +30,7 @@
       <td>{{ entrada.fecha_documento|date:"d b Y" }}</td>
       <td>{{ entrada.quien.first_name }}</td>
       <td>{{ entrada.almacen }}</td>
+      <td>{{ entrada.total }}</td>
       <td class="text-center">
         <a class="btn btn-sm btn-warning" href="{% url 'entrada_view' entrada.id %}" title="Ver detalles"><i class="fa fa-folder-open"></i></a>
         <a class="btn btn-sm btn-info" href="{% url 'entrada_print' entrada.id %}"><i class="fa fa-print"></i></a>
@@ -36,13 +38,13 @@
     </tr>
     {% empty %}
     <tr>
-      <td colspan="6" class="text-center">No hay entradas registradas</td>
+      <td colspan="7" class="text-center">No hay entradas registradas</td>
     </tr>
     {% endfor %}
   </tbody>
   <tfoot>
     <tr>
-      <th colspan="6" class="ts-pager form-horizontal">
+      <th colspan="7" class="ts-pager form-horizontal">
         <button type="button" class="btn first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
         <button type="button" class="btn prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
         <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
