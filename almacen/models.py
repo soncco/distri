@@ -33,6 +33,7 @@ class Entrada(models.Model):
   notas = models.TextField(blank = True)
   proveedor = models.ForeignKey('core.Proveedor', blank = True, null = True)
   quien = models.ForeignKey(User)
+  total = models.DecimalField(max_digits = 10, decimal_places = 2, default = Decimal('0.00'))
 
 class EntradaDetalle(models.Model):
   entrada_padre = models.ForeignKey(Entrada)

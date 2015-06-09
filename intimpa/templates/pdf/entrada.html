@@ -21,7 +21,9 @@
         <strong>Documento:</strong> {{ entrada.get_documento_display }}
         <strong>Número de documento:</strong> {{ entrada.numero_documento }}
         <strong>Fecha del documento:</strong> {{ entrada.fecha_documento }}
+        <strong>Total S/.:</strong> {{ entrada.total }}
       </p>
+
       {% if entrada.documento != 'G' %}
       <p>
         <strong>Proveedor:</strong> {{ entrada.proveedor.razon_social }}
