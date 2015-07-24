@@ -76,7 +76,7 @@ var intimpa = intimpa || {};
         row: row,
         producto: $producto.val(),
         cantidad: $cantidad.val(),
-        descuento: $descuento.val(),
+        descuento_soles: parseFloat($descuento.val()).toFixed(2),
         unitario: $('#unitario').val(),
         subtotal: function () {
           return (this.cantidad * this.unitario).toFixed(2);
